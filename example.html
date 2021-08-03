@@ -1,0 +1,13 @@
+<!--Obviously this isn't a proper HTML page - This is just an example of what code needs to be added to a given page to use this custom cursor-->
+
+<!--Import cursor css-->
+<link rel="stylesheet" href="styles/cursor.css">
+
+<!--Cursor div, placed inside <body> element-->
+<div class="section"><div id="cursor"></div></div>
+
+<!--Import cursor js-->
+<script src="scripts/cursor.js"></script>
+
+<!--Specify name of class the cursor will see as a link - ".a_link", in this case. This allows non-link items (such as elements with on_click actions) to appear as links-->
+<script>bindToQuerySelector(".a_link")</script>

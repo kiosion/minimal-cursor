@@ -1,0 +1,27 @@
+/*
+    Note: 'cursor: none;' needs to be applied to html, body, a, etc in main stylesheet in order to hide default cursor
+*/
+
+#cursor {
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    position: absolute;
+    /*display: none;*/
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 90000;
+    transition: border 0.2s ease!important;
+        -moz-transition: border 0.2s ease!important;
+            -webkit-transition: border 0.2s ease!important;
+                -o-transition: border 0.2s ease!important;  
+}
+
+#cursor.hovered {
+    border: 28px solid rgba(255, 255, 255, 0.25);
+}
+
+#cursor.click {
+    border: 16px solid rgba(255,255,255, 0.75);
+}
