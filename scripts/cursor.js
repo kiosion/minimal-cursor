@@ -20,8 +20,9 @@ var $loop = setInterval(function(){
 }, 6);
 
 //Hide if mobile device
-if( /Android|iOS|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+if(navigator.userAgent.toLowerCase().match(/mobile/i)) {
     cursor.style.display = "none";
+    return;
 }
 else {
     document.addEventListener("mousemove", cursorOnMove)
