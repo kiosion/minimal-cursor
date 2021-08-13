@@ -9,5 +9,6 @@ If you're knowledgable in JS & know how to fix any of these issues, feel free to
 - Created in site's upper-left corner, slight delay before it snaps to the cursor location
 
 ## Demo
-Head over to [kio.dev](https://kio.dev/) to see it in action!
+Head over to [kio.dev](https://kio.dev/) to test it out.
+
 ![Minimal cursor - gif demo](demo.gif)
