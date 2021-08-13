@@ -10,3 +10,4 @@ If you're knowledgable in JS & know how to fix any of these issues, feel free to
 
 ## Demo
 Head over to [kio.dev](https://kio.dev/) to see it in action!
+![Minimal cursor - gif demo](demo.gif)
