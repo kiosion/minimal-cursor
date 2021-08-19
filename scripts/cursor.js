@@ -22,7 +22,6 @@ var $loop = setInterval(function(){
 //Hide if mobile device
 if(navigator.userAgent.toLowerCase().match(/mobile/i)) {
     cursor.style.display = "none";
-    return;
 }
 else {
     document.addEventListener("mousemove", cursorOnMove)
