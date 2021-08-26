@@ -1,13 +1,70 @@
-<!--Required code to use the cursor on a given page-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor Test</title>
+    <style>
+        html {
+            height: 100%;
+            background-color: black;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        * {
+            cursor: none;
+            box-sizing: inherit;
+        }
+        h1,h2,h3,p,a,button {
+            color: white;
+            font-family: sans-serif;
+        }
+        button {
+            position: absolute;
+            border-radius: 0;
+            border: 1px solid white;
+            color: white;
+            padding: 4px 12px;
+            background-color: transparent;
+            transition: border .3s;
+        }
+        button:hover {
+            border: 1px solid transparent;
+        }
+        #testdiv {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            border: 28px solid rgba(255, 255, 255, 0.25);
+        }
+        .spacerdiv {
+            padding-top: 20%;
+            padding-left: 20%;
+        }
+    </style>
+    <!--Import custom cursor css-->
+    <link rel="stylesheet" href="styles/cursor.css">
+</head>
+<body>
+    <!--Cursor div, placed inside <body> element-->
+    <div id="cursor"></div>
 
-<!--Import cursor css-->
-<link rel="stylesheet" href="styles/cursor.css">
+    <!--Example page content-->
+    <div class="spacerdiv">
+        <!-- <div id="testdiv"></div> -->
+        <h1>Cursor test page</h1><br>
+        <p>This is some filler text. Oh and here's <b><a ref="#" class="a_link">a link</a></b> that leads somewhere.</p><br>
+        <button class="a_link">Here's an example button</button>
+    </div>
+    
+    <!--Import jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" type="text/javascript"></script>
 
-<!--Cursor div, placed inside <body> element-->
-<div id="cursor"></div>
+    <!--Import cursor js-->
+    <script src="scripts/cursor.js" type="text/javascript"></script>
 
-<!--Import cursor js-->
-<script src="scripts/cursor.js"></script>
-
-<!--Specify name of class the cursor will see as a link - ".a_link", in this case. This allows non-link items (such as elements with on_click actions) to appear as links-->
-<script>bindToQuerySelector(".a_link")</script>
+    <!--Specify name of class the cursor will treat as a link-->
+    <script>bindToQuerySelector(".a_link")</script>
+</body>
+</html>

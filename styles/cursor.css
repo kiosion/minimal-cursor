@@ -1,5 +1,5 @@
 /*
-    Note: 'cursor: none;' needs to be applied to html, body, a, etc in main stylesheet in order to hide default cursor
+    Note: 'cursor: none;' needs to be applied to * in main stylesheet in order to hide default cursor
 */
 
 #cursor {
@@ -13,9 +13,9 @@
     pointer-events: none;
     z-index: 90000;
     transition: border 0.2s ease!important;
-        -moz-transition: border 0.2s ease!important;
-            -webkit-transition: border 0.2s ease!important;
-                -o-transition: border 0.2s ease!important;  
+    -moz-transition: border 0.2s ease!important;
+    -webkit-transition: border 0.2s ease!important;
+    -o-transition: border 0.2s ease!important;  
 }
 
 #cursor.hovered {
