@@ -3,61 +3,67 @@ const bindToQuerySelector = (querySelector) => {
     let a = document.querySelectorAll(querySelector);
     a.forEach(e => e.addEventListener('mouseenter', handleMouseEnter));
     a.forEach(e => e.addEventListener('mouseleave', handleMouseLeave));
-}
+};
 
-//Follow Cursor
-let mouseX = 0, mouseY = 0;
-let xp = 0, yp =0;
 cursor.style.display = "none";
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.pageX;
-    mouseY = e.pageY;
+
+// Define pos vars
+let xp = 0, yp = 0;
+let mouseX = 0, mouseY = 0;
+
+// On mouse move
+$(document).on('mousemove', function(e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
 });
 
-let loop = setInterval(() => {
+$(window).on('scroll', function(e) {
+    
+});
+
+// Loop
+let loop = setInterval(e => {
     xp += ((mouseX - xp)/6);
     yp += ((mouseY - yp)/6);
-    cursor.style.left = xp + 'px';
-    cursor.style.top = yp + 'px';
+    $('#cursor').css({
+        left: xp,
+        top: yp,
+    });
 }, 6);
 
-//Hide if mobile device
-if(navigator.userAgent.toLowerCase().match(/mobile/i)) {
-    cursor.style.display = "none";
-} else {
-    const cursorOnMove = () => {
-        cursor.style.display = "block";
-        document.removeEventListener("mousemove", cursorOnMove);
-    }
-    document.addEventListener("mousemove", cursorOnMove)
-}
+// Show on first movement
+const cursorMove = () => {
+    cursor.style.display = "block";
+    document.removeEventListener("mousemove", cursorMove);
+};
+document.addEventListener("mousemove", cursorMove);
 
-// event: mouseout
+// Event: mouseout
 document.addEventListener("mouseout", () => {
     cursor.style.display = "none";
 });
 
-// event: mouseover
+// Event: mouseover
 document.addEventListener("mouseover", () => {
     cursor.style.display = "block";
 });
 
-// event: mousedown
+// Event: mousedown
 document.addEventListener("mousedown", () => {
     cursor.classList.add('click');
 });
 
-// event: mouseup
+// Event: mouseup
 document.addEventListener("mouseup", () => {
     cursor.classList.remove('click');
 });
 
-// event: mouse enter on link
+// Event: mouse enter on link
 const handleMouseEnter = () => {
     cursor.classList.add('hovered');
-}
+};
 
-// event: mouse leave on link
+// Event: mouse leave on link
 const handleMouseLeave = () => {
     cursor.classList.remove('hovered');
-}
+};
